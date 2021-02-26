@@ -17,3 +17,25 @@ export interface RequestParame {
   // 指定请求超时的毫秒数
   timeout: number
 }
+
+export interface RequestResponse<K = any> {
+  // 服务器响应
+  data: K;
+  // 服务器状态码
+  status: number;
+}
+
+export interface requestUse {
+  use(callback: (config: RequestParame) => void): void;
+}
+
+export interface responseUse<K = any> {
+  use(callback: (config: RequestResponse<K>) => void): void;
+}
+
+export type useCallback = <K = any>(config: RequestParame | RequestResponse<K>) => void;
+export type useCallbackList = useCallback [];
+
+export interface UseCallbackL {
+  callbackList: useCallbackList
+}

@@ -12,6 +12,23 @@
 <body>
   <button type="button">点击</button>
   <script>
+
+    Ajax.request.use(function () {
+      console.log('访问前');
+    });
+    
+    Ajax.request.use(function () {
+      console.log('访问前');
+    });
+
+    Ajax.response.use(function () {
+      console.log('访问后');
+    });
+    
+    Ajax.response.use(function () {
+      console.log('访问后');
+    });
+
     document.querySelector('[type="button"]').addEventListener('click', async function () {
       console.log(await Ajax.get('https://randomuser.me/api/'));
     })
