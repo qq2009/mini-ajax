@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ajax</title>
+  <script src="ajax.js"></script>
+</head>
+
+<body>
+  <button type="button">点击</button>
+  <script>
+    document.querySelector('[type="button"]').addEventListener('click', async function () {
+      console.log(await Ajax.get('https://randomuser.me/api/'));
+    })
+  </script>
+</body>
+
+</html>
